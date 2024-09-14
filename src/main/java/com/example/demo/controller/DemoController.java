@@ -55,7 +55,6 @@ public class DemoController {
     }
 	private void java8InstanceOf() {
 		 Object obj = getSomeObject();
-		//@@@@ javax.security.cert TO java.security.cert
 	        if (obj instanceof String) {
 	            String str = (String) obj;
 	            System.out.println("String length: " + str.length());
@@ -68,7 +67,7 @@ public class DemoController {
         return "Hello, Santra";
     }
 
-	public static java8Certificate {
+	private void java8Certificate() {
 	        X509Certificate cert = getCertificate(); 
 	        
 	        System.out.println("Certificate Subject: " + cert.getSubjectDN());
