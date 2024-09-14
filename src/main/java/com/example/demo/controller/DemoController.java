@@ -24,7 +24,7 @@ public class DemoController {
 	@ResponseBody
 	public ResponseEntity<String> test() {
 		java8Jaxb();
-		java8ThreadStop();
+		java8StringFormat();
 		
 		return new ResponseEntity<>("RUNNING", HttpStatus.OK);
 	}
@@ -45,32 +45,13 @@ public class DemoController {
             e.printStackTrace();
         }
 		
-	}
+    }
 
 
-	private void java8ThreadStop() {
-		Thread thread = new Thread(() -> {
-            try {
-                while (true) {
-                    // Simulate some work
-                    Thread.sleep(1000);
-                    System.out.println("Thread is running");
-                }
-            } catch (InterruptedException e) {
-                System.out.println("Thread interrupted");
-            }
-        });
-
-        thread.start();
-
-        try {
-            // Let the thread run for a while
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        thread.stop(); // This is deprecated
-        System.out.println("Thread stopped");
+	private void java8StringFormat() {
+	String name = "Santra";
+        int age = 30;
+        String message = String.format("My name is %s and I am %d years old.", name, age);
+        System.out.println(message);
     }
 }
