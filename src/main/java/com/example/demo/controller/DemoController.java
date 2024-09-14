@@ -25,7 +25,7 @@ public class DemoController {
 	public ResponseEntity<String> test() {
 		java8Jaxb();
 		java8StringFormat();
-		
+		java8InstanceOf();
 		return new ResponseEntity<>("RUNNING", HttpStatus.OK);
 	}
 	private void java8Jaxb() {
@@ -46,12 +46,24 @@ public class DemoController {
         }
 		
     }
-
-
 	private void java8StringFormat() {
 	String name = "Santra";
         int age = 30;
         String message = String.format("My name is %s and I am %d years old.", name, age);
         System.out.println(message);
+    }
+	private void java8InstanceOf() {
+		 Object obj = getSomeObject();
+
+	        if (obj instanceof String) {
+	            String str = (String) obj; // Explicit cast
+	            System.out.println("String length: " + str.length());
+	        } else if (obj instanceof Integer) {
+	            Integer num = (Integer) obj; // Explicit cast
+	            System.out.println("Integer value: " + num);
+	        }
+	}
+	private static Object getSomeObject() {
+        return "Hello, Santra";
     }
 }
